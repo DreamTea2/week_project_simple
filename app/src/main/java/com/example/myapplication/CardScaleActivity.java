@@ -30,7 +30,6 @@ import com.example.myapplication.fragments.CardReverceFragment;
  **/
 public class CardScaleActivity extends AppCompatActivity {
 
-
     private boolean showingBack = false;
 
     public static void newInstance ( Activity activity ) {

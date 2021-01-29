@@ -21,7 +21,6 @@ import androidx.appcompat.app.AppCompatActivity;
  **/
 public class AlphaActivity extends AppCompatActivity {
 
-
     private View contentView;
     private View loadingView;
 

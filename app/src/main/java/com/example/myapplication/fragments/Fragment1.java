@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.AlphaActivity;
+import com.example.myapplication.AttributeActivity;
 import com.example.myapplication.CardScaleActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseAdapter;
@@ -58,10 +59,10 @@ public class Fragment1 extends Fragment {
         ItemData attribute = new ItemData ( 2, "Attribute animation（属性动画）", false );
         dataList.add ( attribute );
 
-        ItemData complement = new ItemData ( 2, "Complementary animation（补间动画）", false );
+        ItemData complement = new ItemData ( 3, "Complementary animation（补间动画）", false );
         dataList.add ( complement );
 
-        ItemData framAnim = new ItemData ( 2, "Frame animation（帧动画）", false );
+        ItemData framAnim = new ItemData ( 4, "Frame animation（帧动画）", false );
         dataList.add ( framAnim );
 
         MyAdapter adapter = new MyAdapter ( dataList, getContext ( ), ( itemData, position, v ) -> {
@@ -73,6 +74,14 @@ public class Fragment1 extends Fragment {
                 case 1:
                     // 卡片翻转动画
                     CardScaleActivity.newInstance ( getActivity ( ) );
+                    break;
+                case 2:
+                    // 属性动画
+                    AttributeActivity.newInstance ( getActivity ( ) );
+                    break;
+                case 3:
+                    break;
+                case 4:
                     break;
                 default:
             }
