@@ -38,6 +38,9 @@ public class MotionActivity extends AppCompatActivity {
             case 2:
                 setContentView ( R.layout.activity_motion_2 );
                 break;
+            case 3:
+                
+                break;
             default:
         }
     }
