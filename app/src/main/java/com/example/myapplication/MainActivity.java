@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -31,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
 
     private Fragment mCurreFragment = new Fragment ( );
     private DrawerLayout drawerLayout;
+
+
+    public static void newInstance ( Activity activity ) {
+        activity.startActivity ( new Intent ( activity, MainActivity.class ) );
+        activity.finish ();
+    }
 
     @Override
     protected void onCreate ( Bundle savedInstanceState ) {
