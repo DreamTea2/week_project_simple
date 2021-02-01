@@ -4,11 +4,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.myapplication.MotionActivity;
 import com.example.myapplication.R;
 
 /**
@@ -28,11 +30,22 @@ public class Fragment3 extends Fragment {
         return fragment;
     }
 
+    TextView tvMotion, tvMotion1;
+
     @Nullable
     @Override
     public View onCreateView ( @NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                                @Nullable Bundle savedInstanceState ) {
         View view = inflater.inflate ( R.layout.fragment_3_layout, container, false );
+        tvMotion = view.findViewById ( R.id.tv_motion );
+        tvMotion.setOnClickListener ( v -> onTextViewClick ( 0 ) );
+        tvMotion1 = view.findViewById ( R.id.tv_motion_1 );
+        tvMotion1.setOnClickListener ( v -> onTextViewClick ( 1 ) );
         return view;
     }
+
+    public void onTextViewClick ( int position ) {
+        MotionActivity.newInstance ( getActivity ( ), position );
+    }
+
 }
