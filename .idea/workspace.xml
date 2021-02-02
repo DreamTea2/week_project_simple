@@ -30,15 +30,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3537b948-1d55-4cfd-aca1-c474f1441011" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/MotionToolbarActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_appbar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_motion_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_motion_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/scene_05.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/scene_06.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/MotionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/MotionActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/fragments/Fragment3.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/fragments/Fragment3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_motion_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_motion_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_3_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_3_layout.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[29e05ed]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[127.0.0.1:62001]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -62,9 +82,9 @@
         <option value="valueResourceFile" />
         <option value="Interface" />
         <option value="navigationResourceFile" />
+        <option value="resourceFile" />
         <option value="Class" />
         <option value="layoutResourceFile" />
-        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -311,10 +331,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="274" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612165175656" />
-    <state x="533" y="85" key="CommitChangelistDialog2" timestamp="1612160546368">
+    <state x="533" y="85" key="CommitChangelistDialog2" timestamp="1612249805809">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="533" y="85" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1612160546368" />
+    <state x="533" y="85" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1612249805809" />
     <state x="640" y="274" key="Downloadable.Font.Dialog.Size" timestamp="1612142868103">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -335,26 +355,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="809" y="421" key="Github.Dialog.Accounts.Choose/0.0.1920.1040@0.0.1920.1040" timestamp="1611740182510" />
-    <state width="1876" height="290" key="GridCell.Tab.0.bottom" timestamp="1612170894283">
+    <state width="1876" height="403" key="GridCell.Tab.0.bottom" timestamp="1612249704478">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="290" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612170894283" />
-    <state width="1876" height="290" key="GridCell.Tab.0.center" timestamp="1612170894283">
+    <state width="1876" height="403" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612249704478" />
+    <state width="1876" height="403" key="GridCell.Tab.0.center" timestamp="1612249704478">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="290" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612170894283" />
-    <state width="1876" height="290" key="GridCell.Tab.0.left" timestamp="1612170894283">
+    <state width="1876" height="403" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612249704478" />
+    <state width="1876" height="403" key="GridCell.Tab.0.left" timestamp="1612249704478">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="290" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612170894283" />
-    <state width="1876" height="290" key="GridCell.Tab.0.right" timestamp="1612170894283">
+    <state width="1876" height="403" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612249704478" />
+    <state width="1876" height="403" key="GridCell.Tab.0.right" timestamp="1612249704478">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="290" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612170894283" />
-    <state x="540" y="262" key="IDE.errors.dialog" timestamp="1612164836014">
+    <state width="1876" height="403" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612249704478" />
+    <state x="540" y="262" key="IDE.errors.dialog" timestamp="1612230574429">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="262" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612164836014" />
+    <state x="540" y="262" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612230574429" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1611907489243">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -371,9 +391,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1611892697235" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1612165089748">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1612246359782">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612165089748" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612246359782" />
   </component>
 </project>

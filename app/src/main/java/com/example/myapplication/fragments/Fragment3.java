@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.MotionActivity;
+import com.example.myapplication.MotionToolbarActivity;
 import com.example.myapplication.R;
 
 /**
@@ -30,7 +31,7 @@ public class Fragment3 extends Fragment {
         return fragment;
     }
 
-    TextView tvMotion, tvMotion1;
+    TextView tvMotion, tvMotion1, tvMotion3, tvMotion4, tvMotion5;
 
     @Nullable
     @Override
@@ -41,6 +42,12 @@ public class Fragment3 extends Fragment {
         tvMotion.setOnClickListener ( v -> onTextViewClick ( 0 ) );
         tvMotion1 = view.findViewById ( R.id.tv_motion_1 );
         tvMotion1.setOnClickListener ( v -> onTextViewClick ( 1 ) );
+        tvMotion3 = view.findViewById ( R.id.tv_motion_2 );
+        tvMotion3.setOnClickListener ( v -> onTextViewClick ( 2 ) );
+        tvMotion4 = view.findViewById ( R.id.tv_motion_3 );
+        tvMotion4.setOnClickListener ( v -> onTextViewClick ( 3 ) );
+        tvMotion5 = view.findViewById ( R.id.tv_motion_4 );
+        tvMotion5.setOnClickListener ( v -> onMotionWithToolbar ( ) );
         return view;
     }
 
@@ -48,4 +55,7 @@ public class Fragment3 extends Fragment {
         MotionActivity.newInstance ( getActivity ( ), position );
     }
 
+    public void onMotionWithToolbar ( ) {
+        MotionToolbarActivity.startActivity ( getActivity ( ) );
+    }
 }

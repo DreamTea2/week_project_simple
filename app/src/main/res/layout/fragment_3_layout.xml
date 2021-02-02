@@ -7,15 +7,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layoutAnimation="@anim/anim_layout"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/tv_motion"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:clickable="true"
-            android:gravity="center"
-            android:text="MotionLayout(一)"
+            android:gravity="start|center_vertical"
+            android:text="MotionLayout(一)CustomAttribute backGroundColor"
             android:textColor="@color/black"
             android:textSize="14sp" />
 
@@ -29,8 +30,53 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:clickable="true"
-            android:gravity="center"
-            android:text="MotionLayout(二)"
+            android:gravity="start|center_vertical"
+            android:text="MotionLayout(二) CustomAttribute Image 1"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/purple_700" />
+
+        <TextView
+            android:id="@+id/tv_motion_2"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:gravity="start|center_vertical"
+            android:text="MotionLayout(三)CustomAttribute Image 2"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/purple_700" />
+
+        <TextView
+            android:id="@+id/tv_motion_3"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:gravity="start|center_vertical"
+            android:text="MotionLayout(四)KeyFrames"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/purple_700" />
+
+        <TextView
+            android:id="@+id/tv_motion_4"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:gravity="start|center_vertical"
+            android:text="MotionLayout(五)MotionLayoutWithToolbar"
             android:textColor="@color/black"
             android:textSize="14sp" />
 

@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,7 +40,7 @@ public class MotionActivity extends AppCompatActivity {
                 setContentView ( R.layout.activity_motion_2 );
                 break;
             case 3:
-                
+                setContentView ( R.layout.activity_motion_3 );
                 break;
             default:
         }
