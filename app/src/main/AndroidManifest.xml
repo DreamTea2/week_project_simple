@@ -27,6 +27,7 @@
         <activity android:name=".Register" />
         <activity android:name=".MotionActivity" />
         <activity android:name=".MotionToolbarActivity" />
+        <activity android:name=".MotionDrawableActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

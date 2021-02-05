@@ -20,24 +20,23 @@ import com.google.android.material.appbar.AppBarLayout;
  **/
 public class MotionToolbar extends MotionLayout implements AppBarLayout.OnOffsetChangedListener {
 
-
     private float mProgress;
 
-    public MotionToolbar ( @NonNull Context context,AttributeSet attributeSet ) {
-        super ( context,attributeSet );
+    public MotionToolbar ( @NonNull Context context, AttributeSet attributeSet ) {
+        super ( context, attributeSet );
     }
+
     @Override
     public void onOffsetChanged ( AppBarLayout appBarLayout, int verticalOffset ) {
-        mProgress = ( float ) ( ( - verticalOffset ) / appBarLayout.getTotalScrollRange ( ) );
-        setProgress ( mProgress);
+        mProgress = ( float ) ( - verticalOffset  / appBarLayout.getTotalScrollRange ( ) );
+        setProgress ( mProgress );
     }
 
     @Override
     protected void onAttachedToWindow ( ) {
         super.onAttachedToWindow ( );
         ViewParent parent = getParent ( );
-        if ( parent instanceof AppBarLayout ) {
-            ( ( AppBarLayout ) parent ).addOnOffsetChangedListener ( this );
-        }
+        AppBarLayout barLayout = ( AppBarLayout ) parent;
+        barLayout.addOnOffsetChangedListener ( this );
     }
 }

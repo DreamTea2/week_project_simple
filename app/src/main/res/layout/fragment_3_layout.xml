@@ -85,5 +85,14 @@
             android:layout_height="1px"
             android:background="@color/purple_700" />
 
+        <TextView
+            android:id="@+id/tv_motion_5"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:gravity="start|center_vertical"
+            android:text="MotionLayout(六)MotionWithDrawerLayout"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
