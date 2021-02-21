@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.myapplication.FragmentRiggerActivity;
 import com.example.myapplication.MotionActivity;
 import com.example.myapplication.MotionDrawableActivity;
 import com.example.myapplication.MotionToolbarActivity;
@@ -33,6 +34,7 @@ public class Fragment3 extends Fragment {
     }
 
     TextView tvMotion, tvMotion1, tvMotion3, tvMotion4, tvMotion5, tvMotion6;
+    TextView tvFragment;
 
     @Nullable
     @Override
@@ -51,6 +53,9 @@ public class Fragment3 extends Fragment {
         tvMotion5.setOnClickListener ( v -> onMotionWithToolbar ( ) );
         tvMotion6 = view.findViewById ( R.id.tv_motion_5 );
         tvMotion6.setOnClickListener ( v -> onMotionWithDrawer ( ) );
+        tvFragment  = view.findViewById(R.id.tv_motion_6);
+        tvFragment.setOnClickListener(v -> FragmentRiggerActivity.startActivity(getActivity()));
+
         return view;
     }
 

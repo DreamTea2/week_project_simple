@@ -1,0 +1,43 @@
+
+Kotlin 在2011 年 已经开始公布了Kotlin 的第一个版本，  并在2012 年将Kotlin 开源，但是在早期时间， 并没有什么人关注。
+2016年才正式开始公布了 1.0 版本, 这代表了Kotlin 已经趋于稳定了成熟了。
+2017年Google 才正式开始宣布Kotlin 成为android 开发一级语言.android studio 也加入了对 Kotlin的支持.
+在线学习Kotlin 代码 https://try.kotlinlang.org
+Kotlin 这门语言也是面向对象的。
+
+
+
+val 声明不可变得变量  相当于Java中的final  不可赋值
+var 声明可变得变量    可赋值
+
+变量表 Kotlin= Java
+int             ==     Int
+long            ==     Long
+short           ==     Short
+float           ==     Float
+double          ==     Double
+boolean         ==     Boolean
+char            ==     Char
+byte            ==     Byte
+
+函数的概念 ：
+    函数 function
+    方法 method
+    两者并没有什么区别，只是叫法不同
+
+    函数语法规则 ：
+    首先声明 fun
+    程序类型声明在SimpleActivity 中
+
+程序的逻辑控制
+   程序得执行语句主要分为三种  ： 顺序语句， 条件语句，循环语句
+   程序类型声明在SimpleActivity 中
+
+循环语句
+   Java 中的循环语句分为 While 和 For 循环，Kotlin 中也提供了While 循环和For循环,其中While循环不管是在使用技巧上还是在语法上都和Java 中的while 循环
+   没有任何区别。
+   程序类型声明在SimpleActivity 中
+
+面向对象的概念 ：
+   不同面向过程的语言（比如C）面向对象语言就是可以创建类的。
+   类， 就是对事物的一种封装。
