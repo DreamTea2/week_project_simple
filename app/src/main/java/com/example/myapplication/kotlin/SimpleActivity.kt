@@ -25,6 +25,17 @@ public class SimpleActivity : AppCompatActivity() {
         Log.w(Companion.TAG, "onCreate: 警告信息")
 //       Log.v  并无找到 只找到了四个方法
         println("Hello Kotlin !")
+
+        var p = Person("张裕森", 23)
+        p.name = "Jack"
+        p.age = 23
+        p.eat()
+
+        val student = Student("张裕森", 23)
+
+        // 单例类调用
+        Singleton.singletonTest()
+
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
