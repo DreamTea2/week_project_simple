@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--  自定义Title  -->
+    <declare-styleable name="WeightTitle">
+        <!--   标题     -->
+        <attr name="weight_title" format="string" />
+        <!--   标题颜色     -->
+        <attr name="weight_color" format="color" />
+        <!--   标题大小     -->
+        <attr name="weight_size" format="dimension" />
+        <!--   返回箭头     -->
+        <attr name="weight_arrow" format="reference" />
+    </declare-styleable>
+</resources>

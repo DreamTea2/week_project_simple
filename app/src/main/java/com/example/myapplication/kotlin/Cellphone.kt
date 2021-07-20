@@ -2,7 +2,7 @@ package com.example.myapplication.kotlin
 
 data class Cellphone(val brand: String, val price: Double) {
 
-    constructor() {
+    constructor() : this() {
     }
 
     override fun equals(other: Any?): Boolean {
