@@ -36,6 +36,7 @@
             android:resource="@array/preloaded_fonts" />
 
          <activity android:name=".fragments.WeightTitleActivity"/>
+         <activity android:name=".fragments.CircleLoadingActivity"/>
     </application>
 
 </manifest>

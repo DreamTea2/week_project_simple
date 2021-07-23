@@ -54,6 +54,9 @@ public class Fragment4 extends Fragment {
                 case "MyTitle":
                     WeightTitleActivity.newInstance(getActivity());
                     break;
+                case "MyCircle":
+                    CircleLoadingActivity.newInstance(getActivity());
+                    break;
             }
         });
         rv.setAdapter(weightAdapter);
@@ -64,6 +67,7 @@ public class Fragment4 extends Fragment {
     private List<String> getData() {
         List<String> data = new ArrayList<>();
         data.add("MyTitle");
+        data.add("MyCircle");
         return data;
     }
 }

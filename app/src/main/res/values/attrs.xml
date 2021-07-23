@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
     <!--  自定义Title  -->
     <declare-styleable name="WeightTitle">
         <!--   标题     -->
@@ -12,5 +11,25 @@
         <attr name="weight_size" format="dimension" />
         <!--   返回箭头     -->
         <attr name="weight_arrow" format="reference" />
+        <!--   右侧文字 | 图标是否显示       -->
+        <attr name="weight_end_hide" format="boolean" />
+        <!--   右侧文字      -->
+        <attr name="weight_end_text" format="string" />
+        <!--   右侧文字大小     -->
+        <attr name="weight_end_text_size" format="dimension" />
+        <!--   右侧图标   true 隐藏  false  显示   -->
+        <attr name="weight_end_icon" format="reference" />
+        <!--   右侧文字颜色   -->
+        <attr name="weight_end_text_color" format="color" />
+    </declare-styleable>
+
+    <!-- 自定义圆环     -->
+    <declare-styleable name="MyLoading">
+        <!--  外环颜色  -->
+        <attr name="out_color" format="color" />
+        <!--  内环颜色       -->
+        <attr name="inner_color" format="color" />
+        <!--  内环文字大小    -->
+        <attr name="seek_size" format="dimension" />
     </declare-styleable>
 </resources>

@@ -22,6 +22,7 @@ import com.example.myapplication.R;
 
 /**
  * Create By shaodong on 2021/7/20 10:28
+ * 2021年7月21日11:11:05
  * 捡起自定义View的知识
  */
 public class WeightTitle extends View {
@@ -44,11 +45,27 @@ public class WeightTitle extends View {
     /* 角标区域*/
     private Rect mRectDb;
     private float defWidth;
-    private int marginLeft = 15;
+    private int margin = 15;
     /* 阴影*/
     private Paint mLayerPaint;
     private int mShawLayerHeight = 15;
     private Rect layerRect;
+    /*更多*/
+    private Paint mMorePaint;
+    /* 右侧图片和文字都复用这个*/
+    private Rect mMoreRect;
+    /* 是否显示返回键*/
+    private boolean hide = false;
+    /* 是否显示阴影*/
+    private boolean hideLayer = false;
+    /* 右侧文字*/
+    private String mEndText;
+    /* 右侧文字大小*/
+    private int mEndTextSize;
+    /*  右侧文字颜色*/
+    private int mEndTextColor;
+    /* 是否显示右侧文字 */
+    private boolean hideEnd;
 
     public WeightTitle(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
@@ -90,6 +107,20 @@ public class WeightTitle extends View {
                     mArrowDb = a.getDrawable(index);
                     defWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 35, getResources().getDisplayMetrics());
                     break;
+                case R.styleable.WeightTitle_weight_end_text:
+                    mEndText = a.getString(index);
+                    break;
+                case R.styleable.WeightTitle_weight_end_text_size:
+                    mEndTextSize = a.getDimensionPixelSize(index, (int) TypedValue.applyDimension(
+                            TypedValue.COMPLEX_UNIT_SP, 16, getResources().getDisplayMetrics()
+                    ));
+                    break;
+                case R.styleable.WeightTitle_weight_end_hide:
+                    hideEnd = a.getBoolean(index, false);
+                    break;
+                case R.styleable.WeightTitle_weight_end_text_color:
+                    mEndTextColor = a.getColor(index, Color.BLACK);
+                    break;
             }
         }
         /*回收资源*/
@@ -97,23 +128,27 @@ public class WeightTitle extends View {
         /* 文字相关的画笔*/
         mFontPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mFontPaint.setTextSize(mTitleTextSize);
-
-
-
         /* 测量文字区域*/
         rect = new Rect();
         mFontPaint.getTextBounds(mTitleText, 0, mTitleText.length(), rect);
-
         /* 角标工具Init*/
         mPaintDb = new Paint();
-        mPaintDb.setColor(Color.YELLOW);
-        layerRect = new Rect( );
-
+        layerRect = new Rect();
+        /* 绘制阴影*/
         mLayerPaint = new Paint();
-        mLayerPaint.setColor(Color.BLUE);
+        mLayerPaint.setColor(Color.DKGRAY);
         mLayerPaint.setStrokeWidth(10);
-        mLayerPaint.setShadowLayer(10,0,0,Color.DKGRAY);
-        mLayerPaint.setMaskFilter(new BlurMaskFilter(10,BlurMaskFilter.Blur.SOLID));
+        /*
+         *radius  阴影大小   阴影 x轴  y轴
+         */
+        mLayerPaint.setShadowLayer(5, 0, 0, Color.DKGRAY);
+        mLayerPaint.setMaskFilter(new BlurMaskFilter(5, BlurMaskFilter.Blur.INNER));
+        /* 右侧更多*/
+        mMorePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mMorePaint.setTextSize(mEndTextSize);
+        mMorePaint.setColor(mEndTextColor);
+        mMoreRect = new Rect();
+        mMorePaint.getTextBounds(mEndText, 0, mEndText.length(), mMoreRect);
     }
 
     /**
@@ -150,17 +185,17 @@ public class WeightTitle extends View {
             int desired = (int) (getPaddingTop() + rectHeight + getPaddingBottom());
             height = desired;
         }
-        layerRect.set(0,0,width,height - mShawLayerHeight);
+        layerRect.set(0, 0, width, height - mShawLayerHeight);
         setMeasuredDimension(width, height);
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         mRectDb = new Rect(
-                marginLeft + getPaddingLeft()
+                margin + getPaddingLeft()
                 , (getPaddingTop() + getPaddingBottom()) / 2
-                , (int) (defWidth + marginLeft)
-                , getHeight() - ((getPaddingTop() + getPaddingBottom()) / 2 ) -mShawLayerHeight
+                , (int) (defWidth + margin)
+                , getHeight() - ((getPaddingTop() + getPaddingBottom()) / 2) - mShawLayerHeight
         );
     }
 
@@ -172,27 +207,46 @@ public class WeightTitle extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.save();
-        canvas.drawRect(layerRect, mLayerPaint);
-        canvas.restore();
-
-        mFontPaint.setColor(Color.BLUE);
+        if (!hideLayer) {
+            canvas.save();
+            canvas.drawRect(layerRect, mLayerPaint);
+            canvas.restore();
+        }
+        mFontPaint.setColor(Color.WHITE);
         /* 整个rect 矩形空间已经根据文字测量好了 to step 1 */
         canvas.drawRect(layerRect, mFontPaint);
         /* 给画笔重新上色,来绘制文字*/
         mFontPaint.setColor(mTitleTextColor);
         /* 开始绘制文字
          * mTitleText 内容
-         * getWidth/2 整个View中心点  - rect.width /2 整个文字占用的空间中心点 = 等于文字开始起始位置 x 高度同理
+         * getWidth/2 整个View中心点  - rect.width /2 整个文字占用的空间中心点 = 等于文字开始起始位置 (x) 高度同理
          */
-        canvas.drawText(mTitleText, getWidth() / 2 - rect.width() / 2, getHeight() / 2 + rect.height() / 2-mShawLayerHeight, mFontPaint);
+        canvas.drawText(
+                mTitleText
+                , getWidth() / 2 - rect.width() / 2
+                , getHeight() / 2 + rect.height() / 2 - mShawLayerHeight, mFontPaint
+        );
+
+        if (!hideEnd) {
+            Log.d("onDraw", "开始绘制右侧文字 width : " + getWidth() + "----moreRect :" + mMoreRect.width() / 2);
+            /* 绘制右侧文字*/
+            canvas.drawText(
+                    mEndText
+                    , (getWidth() - mMoreRect.width() - (margin + getPaddingRight()))
+                    , getHeight() / 2 + mMoreRect.height() / 2 - mShawLayerHeight, mMorePaint
+            );
+        }
         /* 绘制范围，并添加Icon */
-        mArrowDb.setBounds(mRectDb);
-        mArrowDb.draw(canvas);
+        if (!hide) {
+            mArrowDb.setBounds(mRectDb);
+            mArrowDb.draw(canvas);
+        }
     }
 
     float dX;
     float dY;
+    float startEnd;
+    int endWidth;
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -210,14 +264,70 @@ public class WeightTitle extends View {
 
                 Log.d("TouchEvent", "dx:" + dX + "->width:" + width + "->startX:" + startX);
                 if (dX > startX && dX - startX <= width) {
-                    Toast.makeText(getContext(), "大家好我是Title", Toast.LENGTH_SHORT).show();
+                    if (titClickListener != null) {
+                        titClickListener.onClickTitleListener();
+                    }
                 }
-                if (dX > marginLeft && dX - marginLeft <= mArrowDb.getBounds().width() + getPaddingLeft()) {
-                    Toast.makeText(getContext(), "大家好我是返回键", Toast.LENGTH_SHORT).show();
+                if (dX > margin && dX - margin <= mArrowDb.getBounds().width() + getPaddingLeft()) {
+                    if (backListener != null) {
+                        backListener.onBackListener();
+                    }
+                }
+                endWidth = mMoreRect.width() + getPaddingRight() + margin;
+
+                startEnd = getMeasuredWidth() - endWidth;
+                if (dX >= startEnd) {
+                    if (titClickListener != null) {
+                        titClickListener.onClickRightTitleListener();
+                    }
                 }
                 break;
             default:
         }
         return true;
+    }
+
+    /**
+     * 是否隐藏返回键
+     *
+     * @param isHide
+     */
+    public void hideBack(boolean isHide) {
+        this.hide = isHide;
+        postInvalidate();
+    }
+
+    /**
+     * 是否显示分割线
+     *
+     * @param isHide
+     */
+    public void hideLayer(boolean isHide) {
+        this.hideLayer = isHide;
+        postInvalidate();
+    }
+
+    public void setOnBackListener(onClickBackListener clickListener) {
+        this.backListener = clickListener;
+    }
+
+    public void setOnClickListener(onClickListener listener) {
+        this.titClickListener = listener;
+    }
+
+    public interface onClickBackListener {
+        /* 返回键 */
+        void onBackListener();
+    }
+
+    public onClickBackListener backListener;
+    public onClickListener titClickListener;
+
+    public interface onClickListener {
+        /*标题*/
+        void onClickTitleListener();
+
+        /*右方的事件*/
+        void onClickRightTitleListener();
     }
 }

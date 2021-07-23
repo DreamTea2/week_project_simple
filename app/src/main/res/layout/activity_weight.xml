@@ -8,15 +8,20 @@
     tools:context=".fragments.WeightTitleActivity">
 
     <com.example.myapplication.weight.WeightTitle
+        android:id="@+id/weight_title"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_centerHorizontal="true"
+        android:layout_height="?actionBarSize"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:paddingTop="10dp"
-        app:weight_color="@color/white"
         android:paddingBottom="10dp"
+        android:paddingRight="10dp"
+        app:weight_arrow="@drawable/icon_back"
+        app:weight_color="@color/black"
+        app:weight_end_hide="false"
+        app:weight_end_text="更多"
+        app:weight_end_text_color="@color/black"
+        app:weight_end_text_size="@dimen/text_small_text"
         app:weight_size="@dimen/text_def_size"
-        app:weight_title="@string/app_name"
-        app:weight_arrow="@drawable/icon_back"/>
+        app:weight_title="我的标题"/>
 </RelativeLayout>
