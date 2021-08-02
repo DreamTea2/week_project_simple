@@ -24,12 +24,14 @@
     </declare-styleable>
 
     <!-- 自定义圆环     -->
-    <declare-styleable name="MyLoading">
+    <declare-styleable name="SeekLoading">
         <!--  外环颜色  -->
         <attr name="out_color" format="color" />
         <!--  内环颜色       -->
         <attr name="inner_color" format="color" />
         <!--  内环文字大小    -->
         <attr name="seek_size" format="dimension" />
+        <!--  文字颜色       -->
+        <attr name="loading_text_color" format="color" />
     </declare-styleable>
 </resources>

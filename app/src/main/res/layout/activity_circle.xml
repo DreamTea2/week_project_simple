@@ -4,10 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.myapplication.weight.MyLoading
+
+    <com.example.myapplication.weight.SeekLoading
         android:id="@+id/loading"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
         app:inner_color="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -15,5 +17,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:out_color="@color/black"
         app:seek_size="@dimen/text_def_size" />
+
+
+    <com.example.myapplication.weight.StatusLayout
+        android:id="@+id/status"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

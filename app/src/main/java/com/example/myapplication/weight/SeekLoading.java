@@ -1,8 +1,6 @@
 package com.example.myapplication.weight;
 
-import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -27,8 +25,8 @@ import com.example.myapplication.R;
  * step 3 : 绘制百分比文字
  * step 4 : 添加文字
  */
-public class MyLoading extends View {
-    private static final String TAG = "MyLoading";
+public class SeekLoading extends View {
+    private static final String TAG = "SeekLoading";
     /* 外圈颜色*/
     private int mOutColor;
     /* 内圈颜色*/
@@ -46,7 +44,7 @@ public class MyLoading extends View {
     /* 文字内容*/
     private String text = "";
     /*外圈圆的半径 */
-    private int radius = 100;
+    private int radius = 65;
     /* 总角度*/
     private float ANGLE = 360.0f;
     /* 画弧*/
@@ -57,33 +55,36 @@ public class MyLoading extends View {
     private float mProgress;
     private int centerX;
     private int centerY;
+    private int textColor;
 
-    public MyLoading(Context context) {
+    public SeekLoading(Context context) {
         super(context, null);
     }
 
-    public MyLoading(Context context, @Nullable AttributeSet attrs) {
+    public SeekLoading(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public MyLoading(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public SeekLoading(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MyLoading, defStyleAttr, 0);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SeekLoading, defStyleAttr, 0);
         for (int i = 0; i < a.length(); i++) {
             int attr = a.getIndex(i);
             switch (attr) {
-                case R.styleable.MyLoading_out_color:
+                case R.styleable.SeekLoading_out_color:
                     mOutColor = a.getColor(attr, Color.BLACK);
                     break;
-                case R.styleable.MyLoading_inner_color:
+                case R.styleable.SeekLoading_inner_color:
                     mInnerColor = a.getColor(attr, Color.WHITE);
                     break;
-                case R.styleable.MyLoading_seek_size:
+                case R.styleable.SeekLoading_seek_size:
                     mTextSize = a.getDimensionPixelSize(attr, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP
                             , 14
                             , getResources().getDisplayMetrics()
                     ));
                     break;
+                case R.styleable.SeekLoading_loading_text_color:
+                    textColor  = a.getColor(attr,Color.BLACK);
                 default:
                     break;
             }
@@ -102,6 +103,7 @@ public class MyLoading extends View {
 
         mTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mTextPaint.setTextSize(mTextSize);
+        mTextPaint.setColor(textColor);
         rect = new Rect();
         if (text != null && text.length() > 0) {
             mTextPaint.getTextBounds(text, 0, text.length(), rect);
