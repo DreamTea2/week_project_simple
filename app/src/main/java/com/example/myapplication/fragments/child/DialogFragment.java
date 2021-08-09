@@ -4,14 +4,13 @@ import android.view.View;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.myapplication.R;
-import com.example.myapplication.weight.BaseDialog;
+import com.example.myapplication.weight.BaseDialogFragment;
 import com.example.myapplication.weight.SeekLoading;
-import com.example.myapplication.weight.StatusLayout;
 
 /**
  * Create By shaodong on 2021/7/26 10:14
  */
-public class DialogFragment extends BaseDialog {
+public class DialogFragment extends BaseDialogFragment {
 
     private static final String TAG = "DialogFragment";
     private SeekLoading mLoading;
@@ -21,6 +20,12 @@ public class DialogFragment extends BaseDialog {
     @Override
     public int layoutId() {
         return R.layout.dialog_layout;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
     }
 
     @Override

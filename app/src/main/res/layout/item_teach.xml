@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp">
+
+    <com.example.myapplication.weight.RoundImageView
+        android:id="@+id/iv_teach_thumb"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:type="round" />
+
+    <TextView
+        android:id="@+id/tv_teach_name"
+        style="@style/TextViewStyle"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:text="刘老师"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/chip_group"
+        app:layout_constraintStart_toEndOf="@+id/iv_teach_thumb"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_introduce"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_teach_thumb"
+        app:layout_constraintTop_toBottomOf="@+id/tv_teach_name">
+
+        <!--        <com.google.android.material.chip.Chip-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="40dp"-->
+        <!--            android:background="@drawable/shape_radius_10_blue"-->
+        <!--            android:text="关键字1"-->
+        <!--            android:textColor="@color/themeColor"-->
+        <!--            app:chipBackgroundColor="@color/theme50" />-->
+
+        <!--        <com.google.android.material.chip.Chip-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="40dp"-->
+        <!--            android:background="@drawable/shape_radius_10_blue"-->
+        <!--            android:text="关键字2"-->
+        <!--            android:textColor="@color/themeColor"-->
+        <!--            app:chipBackgroundColor="@color/theme50" />-->
+
+        <!--        <com.google.android.material.chip.Chip-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="40dp"-->
+        <!--            android:background="@drawable/shape_radius_10_blue"-->
+        <!--            android:text="关键字3"-->
+        <!--            android:textColor="@color/themeColor"-->
+        <!--            app:chipBackgroundColor="@color/theme50" />-->
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.example.myapplication.weight.AutoTextView
+        android:id="@+id/tv_introduce"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:paddingStart="25dp"
+        android:paddingEnd="15dp"
+        android:text="@string/lorem_ipsum"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_teach_thumb"
+        app:layout_constraintTop_toBottomOf="@+id/chip_group" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

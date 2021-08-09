@@ -57,10 +57,15 @@ public class Fragment4 extends Fragment {
                 case "MyCircle":
                     CircleLoadingActivity.newInstance(getActivity());
                     break;
+                case "MyRecyclerView":
+                    MyRecyclerActivity.startActivity(getActivity());
+                    break;
+                case "SelectDialog" :
+                    SelectActivity.startActivity(getActivity()) ;
+                    break;
             }
         });
         rv.setAdapter(weightAdapter);
-
         return view;
     }
 
@@ -68,6 +73,8 @@ public class Fragment4 extends Fragment {
         List<String> data = new ArrayList<>();
         data.add("MyTitle");
         data.add("MyCircle");
+        data.add("MyRecyclerView");
+        data.add("SelectDialog");
         return data;
     }
 }

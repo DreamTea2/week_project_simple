@@ -34,4 +34,36 @@
         <!--  文字颜色       -->
         <attr name="loading_text_color" format="color" />
     </declare-styleable>
+
+
+    <!--   圆角图片 -->
+    <attr name="borderRadius" format="dimension" />
+    <attr name="type">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1" />
+    </attr>
+
+
+    <declare-styleable name="RoundImageView">
+        <attr name="borderRadius" />
+        <attr name="type" />
+    </declare-styleable>
+
+    <!--   自动换行的LinearLayout并且平均分   -->
+    <declare-styleable name="AutoLinearLayout">
+        <attr name="auto_row" format="integer" />
+        <attr name="auto_col" format="integer" />
+        <attr name="auto_spec_horizontal" format="dimension" />
+        <attr name="auto_spec_vertical" format="dimension" />
+    </declare-styleable>
+
+    <!-- AutoText -->
+    <declare-styleable name="AutoTextView">
+        <!--      文本  -->
+        <attr name="auto_text" format="string" />
+        <!--       要替换的颜色-->
+        <attr name="replace_color" format="color" />
+        <!--        要截取的文本开始位置-->
+        <attr name="replace_start_index" format="integer" />
+    </declare-styleable>
 </resources>

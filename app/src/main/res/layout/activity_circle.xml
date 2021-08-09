@@ -18,11 +18,24 @@
         app:out_color="@color/black"
         app:seek_size="@dimen/text_def_size" />
 
+    <com.example.myapplication.weight.RoundImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="15dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:type="round"
+        android:src="@drawable/ic_launcher_background"/>
+
 
     <com.example.myapplication.weight.StatusLayout
         android:id="@+id/status"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -18,21 +18,21 @@ import java.util.List;
  *
  * @author
  **/
-public abstract class BaseAdapter< VH extends RecyclerView.ViewHolder, T > extends RecyclerView.Adapter< VH > {
+public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder, T> extends RecyclerView.Adapter<VH> {
 
-    private List< T > dataList;
+    private List<T> dataList;
 
     private Context context;
 
-    private onItemClickListener< T > itemClickListener;
+    private onItemClickListener<T> itemClickListener;
 
-    public BaseAdapter ( List< T > dataList, Context context ) {
+    public BaseAdapter(List<T> dataList, Context context) {
         this.dataList = dataList;
         this.context = context;
     }
 
-    public BaseAdapter ( List< T > dataList, Context context,
-                         onItemClickListener< T > clickListener ) {
+    public BaseAdapter(List<T> dataList, Context context,
+                       onItemClickListener<T> clickListener) {
         this.dataList = dataList;
         this.context = context;
         this.itemClickListener = clickListener;
@@ -40,27 +40,28 @@ public abstract class BaseAdapter< VH extends RecyclerView.ViewHolder, T > exten
 
     @NonNull
     @Override
-    public VH onCreateViewHolder ( @NonNull ViewGroup parent, int viewType ) {
-        View view = LayoutInflater.from ( context ).inflate ( layoutId ( ), parent, false );
-        return getViewHolder ( view );
+    public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(layoutId(viewType), parent, false);
+        return getViewHolder(view, viewType,parent);
     }
 
-    protected abstract int layoutId ( );
+    protected abstract int layoutId(int viewType);
 
     @Override
-    public void onBindViewHolder ( @NonNull VH holder, int position ) {
-        T t = dataList.get ( position );
-        setValue ( holder, t );
-        holder.itemView.setOnClickListener ( v -> {
-            if ( itemClickListener != null ) {
-                itemClickListener.setOnItemClickListener ( t, position ,v);
+    public void onBindViewHolder(@NonNull VH holder, int position) {
+        T t = dataList.get(position);
+        setValue(holder, t);
+        holder.itemView.setOnClickListener(v -> {
+            if (itemClickListener != null) {
+                itemClickListener.setOnItemClickListener(t, position, v);
             }
-        } );
+        });
     }
 
+
     @Override
-    public int getItemCount ( ) {
-        return dataList == null ? 0 : dataList.size ( );
+    public int getItemCount() {
+        return dataList == null ? 0 : dataList.size();
     }
 
     /**
@@ -69,7 +70,7 @@ public abstract class BaseAdapter< VH extends RecyclerView.ViewHolder, T > exten
      * @param itemView
      * @return
      */
-    protected abstract VH getViewHolder ( View itemView );
+    protected abstract VH getViewHolder(View itemView, int viewType,ViewGroup viewGroup);
 
     /**
      * 添加数据
@@ -77,12 +78,12 @@ public abstract class BaseAdapter< VH extends RecyclerView.ViewHolder, T > exten
      * @param data
      * @return
      */
-    protected abstract void setValue ( VH holder, T data );
+    protected abstract void setValue(VH holder, T data);
 
-    public void remove ( int position ) {
-        if ( dataList != null && dataList.size ( ) > 0 ) {
-            dataList.remove ( position );
-            notifyItemChanged ( position );
+    public void remove(int position) {
+        if (dataList != null && dataList.size() > 0) {
+            dataList.remove(position);
+            notifyItemChanged(position);
         }
     }
 

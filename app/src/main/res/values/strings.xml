@@ -11,6 +11,8 @@
     <string name="drawer_3">C学习</string>
     <string name="drawer_4">收藏的各种技术博客</string>
 
+    <string name="study_count">学习次数:%d次</string>
+
     <string name="open_drawer">打开抽屉</string>
     <string name="close_drawer">关闭抽屉</string>
 

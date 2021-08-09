@@ -36,48 +36,48 @@ import java.util.List;
  **/
 public class Fragment1 extends Fragment {
 
-    public static Fragment1 newInstance ( ) {
-        Bundle args = new Bundle ( );
-        Fragment1 fragment = new Fragment1 ( );
-        fragment.setArguments ( args );
+    public static Fragment1 newInstance() {
+        Bundle args = new Bundle();
+        Fragment1 fragment = new Fragment1();
+        fragment.setArguments(args);
         return fragment;
     }
 
     @Nullable
     @Override
-    public View onCreateView ( @NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                               @Nullable Bundle savedInstanceState ) {
-        View view = inflater.inflate ( R.layout.fragment_1_layout, container, false );
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_1_layout, container, false);
 
-        List< ItemData > dataList = new ArrayList<> ( );
-        ItemData data = new ItemData ( 0, "Loading anim", false );
-        dataList.add ( data );
+        List<ItemData> dataList = new ArrayList<>();
+        ItemData data = new ItemData(0, "Loading anim", false);
+        dataList.add(data);
 
-        ItemData anim = new ItemData ( 1, "ItemAnim", false );
-        dataList.add ( anim );
+        ItemData anim = new ItemData(1, "ItemAnim", false);
+        dataList.add(anim);
 
-        ItemData attribute = new ItemData ( 2, "Attribute animation（属性动画）", false );
-        dataList.add ( attribute );
+        ItemData attribute = new ItemData(2, "Attribute animation（属性动画）", false);
+        dataList.add(attribute);
 
-        ItemData complement = new ItemData ( 3, "Complementary animation（补间动画）", false );
-        dataList.add ( complement );
+        ItemData complement = new ItemData(3, "Complementary animation（补间动画）", false);
+        dataList.add(complement);
 
-        ItemData framAnim = new ItemData ( 4, "Frame animation（帧动画）", false );
-        dataList.add ( framAnim );
+        ItemData framAnim = new ItemData(4, "Frame animation（帧动画）", false);
+        dataList.add(framAnim);
 
-        MyAdapter adapter = new MyAdapter ( dataList, getContext ( ), ( itemData, position, v ) -> {
-            switch ( itemData.getId ( ) ) {
+        MyAdapter adapter = new MyAdapter(dataList, getContext(), (itemData, position, v) -> {
+            switch (itemData.getId()) {
                 case 0:
                     // 渐变
-                    AlphaActivity.newInstance ( getActivity ( ) );
+                    AlphaActivity.newInstance(getActivity());
                     break;
                 case 1:
                     // 卡片翻转动画
-                    CardScaleActivity.newInstance ( getActivity ( ) );
+                    CardScaleActivity.newInstance(getActivity());
                     break;
                 case 2:
                     // 属性动画
-                    AttributeActivity.newInstance ( getActivity ( ) );
+                    AttributeActivity.newInstance(getActivity());
                     break;
                 case 3:
                     break;
@@ -85,41 +85,41 @@ public class Fragment1 extends Fragment {
                     break;
                 default:
             }
-        } );
-        RecyclerView recyclerView = view.findViewById ( R.id.recycler_view );
-        recyclerView.setLayoutManager ( new LinearLayoutManager ( getContext ( ) ) );
-        recyclerView.setItemViewCacheSize ( Integer.MAX_VALUE );
-        recyclerView.setAdapter ( adapter );
-        recyclerView.addItemDecoration ( new DividerItemDecoration ( getContext ( ),
-                LinearLayoutManager.VERTICAL ) );
+        });
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setItemViewCacheSize(Integer.MAX_VALUE);
+        recyclerView.setAdapter(adapter);
+        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
+                LinearLayoutManager.VERTICAL));
         return view;
     }
 
-    private class MyAdapter extends BaseAdapter< BaseHolder, ItemData > {
+    private class MyAdapter extends BaseAdapter<BaseHolder, ItemData> {
 
-        public MyAdapter ( List< ItemData > dataList, Context context ) {
-            super ( dataList, context );
+        public MyAdapter(List<ItemData> dataList, Context context) {
+            super(dataList, context);
         }
 
-        public MyAdapter ( List< ItemData > dataList, Context context,
-                           onItemClickListener< ItemData > clickListener ) {
-            super ( dataList, context, clickListener );
+        public MyAdapter(List<ItemData> dataList, Context context,
+                         onItemClickListener<ItemData> clickListener) {
+            super(dataList, context, clickListener);
         }
 
         @Override
-        protected int layoutId ( ) {
+        protected int layoutId(int viewType ) {
             return R.layout.adapter_item_layout;
         }
 
         @Override
-        protected BaseHolder getViewHolder ( View itemView ) {
-            return new BaseHolder ( itemView );
+        protected BaseHolder getViewHolder(View itemView, int viewType ,ViewGroup parent) {
+            return new BaseHolder(itemView);
         }
 
         @Override
-        protected void setValue ( BaseHolder holder, ItemData data ) {
-            holder.setText ( R.id.tv_text, data.getItemContent ( ) );
-            holder.startScalAnim ( R.id.iv_play );
+        protected void setValue(BaseHolder holder, ItemData data) {
+            holder.setText(R.id.tv_text, data.getItemContent());
+            holder.startScalAnim(R.id.iv_play);
         }
     }
 }

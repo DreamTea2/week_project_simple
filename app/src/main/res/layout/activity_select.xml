@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_show"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:text="展开" />
+
+    <com.example.myapplication.weight.AutoTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:auto_text="这是一个很长的:测试文案"
+        app:replace_color="@color/themeColor"
+        app:replace_start_index="10"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

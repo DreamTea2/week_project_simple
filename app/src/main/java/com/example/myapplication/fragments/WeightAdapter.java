@@ -2,6 +2,7 @@ package com.example.myapplication.fragments;
 
 import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.myapplication.R;
 import com.example.myapplication.base.BaseAdapter;
@@ -24,12 +25,12 @@ public class WeightAdapter extends BaseAdapter<BaseHolder, String> {
     }
 
     @Override
-    protected int layoutId() {
+    protected int layoutId(int viewType) {
         return R.layout.item_weight_layout;
     }
 
     @Override
-    protected BaseHolder getViewHolder(View itemView) {
+    protected BaseHolder getViewHolder(View itemView, int viewType, ViewGroup viewGroup) {
         return new BaseHolder(itemView);
     }
 

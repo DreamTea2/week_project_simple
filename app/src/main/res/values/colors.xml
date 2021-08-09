@@ -11,4 +11,8 @@
     <color name="transparent">#00000000</color>
     <color name="transparent80">#80000000</color>
     <color name="transparent55">#8C000000</color>
+
+     <color name="darkFont">#7F7F7F</color>
+    <color name="themeColor">#169BD5</color>
+    <color name="theme50">#EDF7FC</color>
 </resources>

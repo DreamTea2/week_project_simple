@@ -2,8 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
-
+    <!--  网络权限   -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--  用户网络的状态   -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -62,6 +63,9 @@
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="behind"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity android:name=".fragments.MyRecyclerActivity" />
+        <activity android:name=".fragments.SelectActivity" />
 
     </application>
 

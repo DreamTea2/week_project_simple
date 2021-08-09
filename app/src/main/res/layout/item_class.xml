@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:paddingTop="10dp">
+
+    <com.example.myapplication.weight.RoundImageView
+        android:id="@+id/iv_thumb"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.40"
+        app:type="round" />
+
+    <TextView
+        android:id="@+id/tv_tag"
+        style="@style/TextViewStyle"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/shape_radius_10_blue"
+        android:text="直播"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/iv_thumb"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.myapplication.weight.AutoTextView
+        android:id="@+id/tv_title_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:singleLine="true"
+        android:text="新闻联播信息新媒体运营支出"
+        android:textSize="@dimen/text_def_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_tag"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.myapplication.weight.RoundImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintStart_toEndOf="@+id/iv_thumb"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tag" />
+
+    <com.example.myapplication.weight.AutoTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingStart="5dp"
+        android:singleLine="true"
+        android:text="@string/study_count"
+        android:textColor="@color/darkFont"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+        app:layout_constraintTop_toBottomOf="@+id/iv_avatar" />
+
+
+    <TextView
+        style="@style/TextViewStyle"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/shape_raduis_15_blue_stroke"
+        android:text="观看直播"
+        android:textColor="@color/themeColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_avatar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
