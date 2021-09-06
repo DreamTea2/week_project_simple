@@ -115,4 +115,15 @@ public class ScreenUtils {
         return bp;
     }
 
+    /**
+     * px 转 dp
+     * @param context
+     * @param pxValue
+     * @return
+     */
+    public static int px2dip(Context context, float pxValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (pxValue / scale + 0.5f);
+    }
+
 }

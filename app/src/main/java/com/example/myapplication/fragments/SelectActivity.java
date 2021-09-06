@@ -7,8 +7,10 @@ import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.myapplication.R;
 
 /**
@@ -28,8 +30,13 @@ public class SelectActivity extends AppCompatActivity {
 
         Button button = findViewById(R.id.btn_show);
         button.setOnClickListener(v -> {
-            SelectDialog selectDialog = new SelectDialog();
-            selectDialog.show(getSupportFragmentManager(),"showDialog");
+//            SelectDialog selectDialog = new SelectDialog();
+//            selectDialog.show(getSupportFragmentManager(),"showDialog");
+            Bundle bundle = new Bundle();
+            bundle.putInt("transX", (int) button.getX());
+            bundle.putInt("transY", (int) button.getY() + button.getHeight());
+            AssortDialog dialog =  AssortDialog.newInstance(bundle);
+            dialog.show(getSupportFragmentManager(), "showDialog");
         });
     }
 }

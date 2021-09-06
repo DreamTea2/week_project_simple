@@ -2,18 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center">
 
     <LinearLayout
         android:id="@+id/ll_loading"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="5dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:background="@drawable/shape_radius_10">
+        android:background="@drawable/shape_radius_10"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp">
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/lt_gift"
@@ -27,23 +28,23 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="加载中..."
             android:layout_marginTop="5dp"
             android:gravity="center"
+            android:text="加载中..."
             android:textColor="@color/white"
             android:textSize="@dimen/text_small_text" />
     </LinearLayout>
 
-    <com.example.myapplication.weight.SeekLoading
-        android:id="@+id/loading"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/ll_loading"
-        android:background="@drawable/shape_radius_10"
-        app:inner_color="@color/white"
-        app:out_color="@color/black"
-        app:loading_text_color="@color/white"
-        app:seek_size="@dimen/text_small_text" />
+<!--    <com.example.myapplication.weight.SeekLoading-->
+<!--        android:id="@+id/loading"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_below="@+id/ll_loading"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/shape_radius_10"-->
+<!--        app:inner_color="@color/white"-->
+<!--        app:loading_text_color="@color/white"-->
+<!--        app:out_color="@color/black"-->
+<!--        app:seek_size="@dimen/text_small_text" />-->
 </RelativeLayout>

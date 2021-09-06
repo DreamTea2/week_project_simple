@@ -19,7 +19,7 @@ import com.example.myapplication.R;
 
 /**
  * Create By shaodong on 2021/7/23 13:45
- * 加载进度的Loading
+ * 加载的Loading
  * step 1 : 建立外环半径, 绘制外环,为青色
  * step 2 : 内环半径为 (外环radius + 外环直径  ) /2
  * step 3 : 绘制百分比文字

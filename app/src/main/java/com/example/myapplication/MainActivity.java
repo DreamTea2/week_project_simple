@@ -153,7 +153,6 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit ( );
     }
 
-
     private long mCurreTime = 0;
     private final long exitTime = 2000;
 

@@ -8,15 +8,19 @@
         android:id="@+id/btn_show"
         android:layout_width="85dp"
         android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
         android:text="展开" />
 
     <com.example.myapplication.weight.AutoTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
         app:auto_text="这是一个很长的:测试文案"
         app:replace_color="@color/themeColor"
-        app:replace_start_index="10"
-        android:layout_centerInParent="true"/>
+        app:replace_start_index="10" />
 
 </RelativeLayout>

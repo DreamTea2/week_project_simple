@@ -39,12 +39,11 @@ public class SelectDialog extends BaseDialogFragment {
         WindowManager.LayoutParams lp = dialogWindow.getAttributes();
         dialogWindow.setGravity(Gravity.LEFT | Gravity.TOP);
         lp.x = 0;
-        lp.y = 100;
-        lp.width = lp.MATCH_PARENT;
-        lp.height = 600;
+        lp.y = 300;
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.MATCH_PARENT;
         lp.alpha = 0.7f;
         dialogWindow.setAttributes(lp);
-
     }
 
     @Override

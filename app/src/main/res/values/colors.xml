@@ -15,4 +15,8 @@
      <color name="darkFont">#7F7F7F</color>
     <color name="themeColor">#169BD5</color>
     <color name="theme50">#EDF7FC</color>
+
+     <color name="seek_drag">#2F9DF5</color>
+     <color name="seek_thu">#E6E6E6</color>
+     <color name="seek_white">#FFFFFF</color>
 </resources>

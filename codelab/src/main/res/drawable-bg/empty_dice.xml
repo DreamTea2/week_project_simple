@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:antialias="false"
+    android:dither="false"
+    android:filter="true"
+    android:gravity="top"
+    android:mipMap="true"
+    android:src="@drawable/dice_1"
+    android:tileMode="repeat" />
+
+    <!--例如，假设您有一个应用图标 icon.png
+    ，并且需要用于不同语言区域的独特版本。但是，加拿大英语和加拿大法语这两种语言区域需使用同一版本。
+    您可能会认为，需要将相同图像复制到加拿大英语和加拿大法语所对应的资源目录中，但事实并非如此。
+    相反，您可以将用于二者的图像保存为 icon_ca.png（除 icon.png 以外的任何名称），
+    并将其放入默认的 res/drawable/ 目录中。然后，在 res/drawable-en-rCA/ 和 res/drawable-fr-rCA/
+    中创建 icon.xml 文件，使用 <bitmap> 元素引用 icon_ca.png 资源。
+    这样，您只需存储 PNG 文件的一个版本和两个指向该版本的小型 XML 文件.-->
+
