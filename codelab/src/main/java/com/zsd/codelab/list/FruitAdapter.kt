@@ -11,10 +11,16 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.zsd.codelab.R
+import com.zsd.codelab.obserable.OnItemClickListener
 
 class FruitAdapter(var context: Context?, private val dataList: List<Fruit>? = ArrayList()) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+    private lateinit var mItemListener: OnItemClickListener
+
+     fun  addOnItemClickListener(itemListener: OnItemClickListener) {
+        this.mItemListener = itemListener
+    }
     class FruitHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.iv_fruit)
         val textView: TextView = itemView.findViewById(R.id.tv_fruit_name)
@@ -35,6 +41,13 @@ class FruitAdapter(var context: Context?, private val dataList: List<Fruit>? = A
                 dataList?.let {
                     holder.textView.text = dataList[position].fruit
                     holder.imageView.setImageResource(dataList[position].fruitIcon)
+                    holder.itemView.setOnClickListener(View.OnClickListener {
+                        it?.let {
+                            mItemListener.let {
+                                mItemListener.setOnItemClickListener(dataList[position])
+                            }
+                        }
+                    })
                 }
             }
         }

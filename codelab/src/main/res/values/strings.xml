@@ -3,4 +3,6 @@
     <string name="roll_text">ROLL</string>
     <string name="reset_text">RESET</string>
     <string name="name">Aleks Haecky</string>
+    <string name="input_msg">请输入消息</string>
+    <string name="input">发送</string>
 </resources>

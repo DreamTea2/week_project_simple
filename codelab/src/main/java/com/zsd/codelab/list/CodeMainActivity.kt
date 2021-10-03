@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.zsd.codelab.R
+import com.zsd.codelab.list.chat.SimpleChatActivity
+import com.zsd.codelab.obserable.OnItemClickListener
 
 /**
  * gradlew app:dependencies
@@ -18,26 +20,14 @@ class CodeMainActivity : AppCompatActivity() {
     private val TAG = "CodeMainActivity"
     private val dataList = ArrayList<Fruit>()
     private lateinit var rvFruit: RecyclerView
+    private lateinit var adapter: FruitAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_codelable)
         fruitData()
         initCompounds()
-    }
-
-    private fun initCompounds() {
-        //初始化相关组件
-        rvFruit = findViewById(R.id.rv_fruit)
-        val linearManger = LinearLayoutManager(this)
-        val adapter = FruitAdapter(this, dataList)
-        rvFruit.layoutManager = linearManger
-        rvFruit.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
-        rvFruit.adapter = adapter
-
-        findViewById<Button>(R.id.btn_next).setOnClickListener {
-            HorizonListActivity.newInstance(this, HorizonListActivity::class.java)
-        }
+        addListener()
     }
 
     //初始化水果
@@ -45,9 +35,34 @@ class CodeMainActivity : AppCompatActivity() {
         repeat(5) {
             dataList.add(Fruit("橙子", R.drawable.fruit_1))
             dataList.add(Fruit("菠萝", R.drawable.fruit_2))
-//            dataList.add(Fruit("牛油果",R.drawable.fruit_3))
-//            dataList.add(Fruit("火龙果",R.drawable.fruit_4)) 图片太大了
             dataList.add(Fruit("香蕉", R.drawable.fruit_5))
         }
     }
+
+    private fun initCompounds() {
+        //初始化相关组件
+        rvFruit = findViewById(R.id.rv_fruit)
+        val linearManger = LinearLayoutManager(this)
+        adapter = FruitAdapter(this, dataList)
+        rvFruit.layoutManager = linearManger
+        rvFruit.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
+        rvFruit.adapter = adapter
+
+        findViewById<Button>(R.id.btn_next).setOnClickListener {
+            /*  开启葫芦娃套爷爷模式*/
+            HorizonListActivity.newInstance(this, HorizonListActivity::class.java)
+        }
+    }
+
+
+    private fun addListener() {
+        adapter?.apply {
+            addOnItemClickListener(object : OnItemClickListener {
+                override fun <Fruit> setOnItemClickListener(t: Fruit) {
+                    SimpleChatActivity.newInstance(this@CodeMainActivity,SimpleChatActivity::class.java)
+                }
+            })
+        }
+    }
+
 }

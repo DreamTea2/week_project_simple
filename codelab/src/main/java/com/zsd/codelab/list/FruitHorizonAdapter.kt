@@ -8,9 +8,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.zsd.codelab.R
+import com.zsd.codelab.obserable.OnItemClickListener
 
 class FruitHorizonAdapter(var context: Context?, private val dataList: List<Fruit>? = ArrayList()) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
 
     class FruitHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.iv_fruit)

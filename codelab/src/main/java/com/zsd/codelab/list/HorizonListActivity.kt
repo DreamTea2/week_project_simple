@@ -56,8 +56,6 @@ class HorizonListActivity : AppCompatActivity() {
         repeat(5) {
             dataList.add(Fruit("橙子", R.drawable.fruit_1))
             dataList.add(Fruit("菠萝", R.drawable.fruit_2))
-//            dataList.add(Fruit("牛油果",R.drawable.fruit_3))
-//            dataList.add(Fruit("火龙果",R.drawable.fruit_4)) 图片太大了
             dataList.add(Fruit("香蕉", R.drawable.fruit_5))
         }
     }
