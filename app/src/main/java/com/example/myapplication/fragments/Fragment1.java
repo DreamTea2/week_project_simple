@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +23,7 @@ import com.example.myapplication.base.BaseAdapter;
 import com.example.myapplication.base.BaseHolder;
 import com.example.myapplication.base.ItemData;
 import com.example.myapplication.base.onItemClickListener;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +50,9 @@ public class Fragment1 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_1_layout, container, false);
+
+        Button btn = view.findViewById(R.id.btn_test);
+        btn.setOnClickListener(v -> CrashReport.testJavaCrash());
 
         List<ItemData> dataList = new ArrayList<>();
         ItemData data = new ItemData(0, "Loading anim", false);
@@ -93,6 +98,8 @@ public class Fragment1 extends Fragment {
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
                 LinearLayoutManager.VERTICAL));
         return view;
+
+
     }
 
     private class MyAdapter extends BaseAdapter<BaseHolder, ItemData> {
@@ -107,12 +114,12 @@ public class Fragment1 extends Fragment {
         }
 
         @Override
-        protected int layoutId(int viewType ) {
+        protected int layoutId(int viewType) {
             return R.layout.adapter_item_layout;
         }
 
         @Override
-        protected BaseHolder getViewHolder(View itemView, int viewType ,ViewGroup parent) {
+        protected BaseHolder getViewHolder(View itemView, int viewType, ViewGroup parent) {
             return new BaseHolder(itemView);
         }
 
@@ -122,4 +129,5 @@ public class Fragment1 extends Fragment {
             holder.startScalAnim(R.id.iv_play);
         }
     }
+
 }

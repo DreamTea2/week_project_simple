@@ -4,10 +4,14 @@
       <root url="jar://$PROJECT_DIR$/../android sdk/build-tools/30.0.2/caches/transforms-2/files-2.1/4f6853e81741a160d2d2d9c04e955800/cursoradapter-1.0.0/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../android sdk/build-tools/30.0.2/caches/transforms-2/files-2.1/4f6853e81741a160d2d2d9c04e955800/cursoradapter-1.0.0/res" />
       <root url="file://$PROJECT_DIR$/../android sdk/build-tools/30.0.2/caches/transforms-2/files-2.1/4f6853e81741a160d2d2d9c04e955800/cursoradapter-1.0.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a21ebc39e505a77088e304c5eae99cac/cursoradapter-1.0.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a21ebc39e505a77088e304c5eae99cac/cursoradapter-1.0.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a21ebc39e505a77088e304c5eae99cac/cursoradapter-1.0.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../android sdk/build-tools/30.0.2/caches/modules-2/files-2.1/androidx.cursoradapter/cursoradapter/1.0.0/1e323083b41c31fd4d45510dfce50614963c3c6c/cursoradapter-1.0.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.cursoradapter/cursoradapter/1.0.0/1e323083b41c31fd4d45510dfce50614963c3c6c/cursoradapter-1.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -4,10 +4,14 @@
       <root url="jar://$PROJECT_DIR$/../android sdk/build-tools/30.0.2/caches/transforms-2/files-2.1/0e80f3463cc09aee6c819ebe29d9b097/jetified-appcompat-resources-1.2.0/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../android sdk/build-tools/30.0.2/caches/transforms-2/files-2.1/0e80f3463cc09aee6c819ebe29d9b097/jetified-appcompat-resources-1.2.0/res" />
       <root url="file://$PROJECT_DIR$/../android sdk/build-tools/30.0.2/caches/transforms-2/files-2.1/0e80f3463cc09aee6c819ebe29d9b097/jetified-appcompat-resources-1.2.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b096ff0764488ecaf6e17991ad11055c/jetified-appcompat-resources-1.2.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b096ff0764488ecaf6e17991ad11055c/jetified-appcompat-resources-1.2.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b096ff0764488ecaf6e17991ad11055c/jetified-appcompat-resources-1.2.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../android sdk/build-tools/30.0.2/caches/modules-2/files-2.1/androidx.appcompat/appcompat-resources/1.2.0/9c8b428f65a329eeff4f6abe14a44931b12ef3f2/appcompat-resources-1.2.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat-resources/1.2.0/9c8b428f65a329eeff4f6abe14a44931b12ef3f2/appcompat-resources-1.2.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

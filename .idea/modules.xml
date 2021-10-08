@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/My_Application.iml" filepath="$PROJECT_DIR$/.idea/modules/My_Application.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/My_Application.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/My_Application.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/codelab/My_Application.codelab.iml" filepath="$PROJECT_DIR$/.idea/modules/codelab/My_Application.codelab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jet_drill/My_Application.jet_drill.iml" filepath="$PROJECT_DIR$/.idea/modules/jet_drill/My_Application.jet_drill.iml" />
     </modules>
   </component>
 </project>

@@ -2,11 +2,14 @@ package com.example.myapplication.app;
 
 import android.app.Application;
 
+import com.example.myapplication.base.Constance;
+import com.tencent.bugly.crashreport.CrashReport;
+
 import me.yokeyword.fragmentation.BuildConfig;
 import me.yokeyword.fragmentation.Fragmentation;
 import me.yokeyword.fragmentation.helper.ExceptionHandler;
 
-public class InitApplication  extends Application {
+public class InitApplication extends Application {
 
     private static final String TAG = "InitApplication";
 
@@ -30,5 +33,8 @@ public class InitApplication  extends Application {
                     }
                 })
                 .install();
+
+        // Bugly 测试阶段更改为false 发布阶段改为true
+        CrashReport.initCrashReport(getApplicationContext());
     }
 }

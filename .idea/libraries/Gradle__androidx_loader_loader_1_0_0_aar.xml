@@ -4,10 +4,14 @@
       <root url="jar://$PROJECT_DIR$/../android sdk/build-tools/30.0.2/caches/transforms-2/files-2.1/518eddb2bfc81fedba1076b2d1fc1a82/loader-1.0.0/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../android sdk/build-tools/30.0.2/caches/transforms-2/files-2.1/518eddb2bfc81fedba1076b2d1fc1a82/loader-1.0.0/res" />
       <root url="file://$PROJECT_DIR$/../android sdk/build-tools/30.0.2/caches/transforms-2/files-2.1/518eddb2bfc81fedba1076b2d1fc1a82/loader-1.0.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cfdbd6211d9d8c288cfd197f355a5a6b/loader-1.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cfdbd6211d9d8c288cfd197f355a5a6b/loader-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cfdbd6211d9d8c288cfd197f355a5a6b/loader-1.0.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../android sdk/build-tools/30.0.2/caches/modules-2/files-2.1/androidx.loader/loader/1.0.0/b9ef587f3e46c7fe5b00264989764e43ff45cada/loader-1.0.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.loader/loader/1.0.0/b9ef587f3e46c7fe5b00264989764e43ff45cada/loader-1.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -70,6 +70,7 @@ public class SimpleDragBar extends View {
     private int weightProgress;
     // 平均值
     private float mWeightLength;
+    private boolean isDrag = true;
 
     public SimpleDragBar(Context context) {
         this(context, null);
@@ -158,7 +159,7 @@ public class SimpleDragBar extends View {
         // 给了一个默认文字高度,因为刚开始没有绘制任何文字,测量高度无法测量
         float v = mTextPaint.measureText(text);
         int minHeight = (int) (mCircleRadius * 2 + (ScreenUtils.dip2px(mContext, 2) * 2)
-                + rect.height() + spaceHeight+v/2);
+                + rect.height() + spaceHeight + v / 2);
         int height = resolveSize(minHeight, heightMeasureSpec);
         setMeasuredDimension(width, height);
     }
@@ -226,12 +227,18 @@ public class SimpleDragBar extends View {
         }
     }
 
+    float xTrans;
+    float xDown;
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                xDown = event.getX();
                 break;
             case MotionEvent.ACTION_MOVE:
+                xTrans = event.getX();
+                if (xDown == xTrans) isDrag = false;  else isDrag = true;
                 break;
             case MotionEvent.ACTION_UP:
                 // 获取当前触摸点，赋值给当前进度
@@ -248,19 +255,21 @@ public class SimpleDragBar extends View {
      * @param event 用户手势操作事件
      */
     private void setMotionProgress(MotionEvent event) {
-        // 获取当前触摸点，赋值给当前进度
-        currentProgress = (int) event.getX();
-        // 获取手指当前抬起来的进度
-        int size = dataArray.size();
-        // 平均值
-        mWeightLength = maxProgress / size;
-        float num = currentProgress / mWeightLength;
-        // 四舍五入
-        int ceil = Math.round(num);
-        currentProgress = mWeightLength * ceil + paddingLeft;
-        // 如果当前进度小于左边距
-        setCurrentProgress();
-        invalidate();
+        if (!isDrag) {
+            // 获取当前触摸点，赋值给当前进度
+            currentProgress = (int) event.getX();
+            // 获取手指当前抬起来的进度
+            int size = dataArray.size();
+            // 平均值
+            mWeightLength = maxProgress / size;
+            float num = currentProgress / mWeightLength;
+            // 四舍五入
+            int ceil = Math.round(num);
+            currentProgress = mWeightLength * ceil + paddingLeft;
+            // 如果当前进度小于左边距
+            setCurrentProgress();
+            invalidate();
+        }
     }
 
     // 如果当前进度超出边界，将当前进度赋值为边界极值

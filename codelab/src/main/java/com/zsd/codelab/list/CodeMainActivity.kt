@@ -2,13 +2,14 @@ package com.zsd.codelab.list
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.zsd.codelab.R
+import com.zsd.codelab.list.Fruit.Companion.SERVICE_DEMO
 import com.zsd.codelab.list.chat.SimpleChatActivity
+import com.zsd.codelab.list.service.MyServiceActivity
 import com.zsd.codelab.obserable.OnItemClickListener
 
 /**
@@ -33,9 +34,9 @@ class CodeMainActivity : AppCompatActivity() {
     //初始化水果
     private fun fruitData() {
         repeat(5) {
-            dataList.add(Fruit("橙子", R.drawable.fruit_1))
-            dataList.add(Fruit("菠萝", R.drawable.fruit_2))
-            dataList.add(Fruit("香蕉", R.drawable.fruit_5))
+            dataList.add(Fruit("聊天", R.drawable.fruit_1))
+            dataList.add(Fruit("新闻", R.drawable.fruit_2))
+            dataList.add(Fruit("服务Test", R.drawable.fruit_5,Fruit.SERVICE_DEMO))
         }
     }
 
@@ -54,12 +55,19 @@ class CodeMainActivity : AppCompatActivity() {
         }
     }
 
-
     private fun addListener() {
         adapter?.apply {
             addOnItemClickListener(object : OnItemClickListener {
                 override fun <Fruit> setOnItemClickListener(t: Fruit) {
-                    SimpleChatActivity.newInstance(this@CodeMainActivity,SimpleChatActivity::class.java)
+                   val fruit =  t as com.zsd.codelab.list.Fruit
+                    when(fruit.type) {
+                        SERVICE_DEMO -> {
+                            MyServiceActivity.newInstance(this@CodeMainActivity,MyServiceActivity::class.java)
+                        }
+                         else  -> {
+                             SimpleChatActivity.newInstance(this@CodeMainActivity,SimpleChatActivity::class.java)
+                         }
+                    }
                 }
             })
         }

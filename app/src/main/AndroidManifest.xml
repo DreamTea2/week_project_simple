@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
 
     <!--  网络权限   -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!--  用户网络的状态   -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--  bugly 相关权限  -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STAT E" />
+
+    <permission
+        android:name="android.permission.READ_LOGS"
+        android:protectionLevel="normal" />
 
     <application
         android:name=".app.InitApplication"
@@ -66,6 +74,22 @@
 
         <activity android:name=".fragments.MyRecyclerActivity" />
         <activity android:name=".fragments.SelectActivity" />
+
+        <!-- 配置APP ID -->
+        <meta-data
+            android:name="BUGLY_APPID"
+            android:value="0a5aaaeb00" />
+        <!-- 配置APP版本号 -->
+        <meta-data
+            android:name="BUGLY_APP_VERSION"
+            android:value="1.0.1" /> <!-- 配置APP渠道号 -->
+<!--      暂时没有获取渠道号  <meta-data-->
+<!--            android:name="BUGLY_APP_CHANNEL"-->
+<!--            android:value="<APP Channel>" />-->
+        <!-- 配置Bugly调试模式（true或者false）-->
+        <meta-data
+            android:name="BUGLY_ENABLE_DEBUG"
+            android:value="true" />
 
     </application>
 
